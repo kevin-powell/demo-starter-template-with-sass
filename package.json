@@ -1,0 +1,33 @@
+{
+  "name": "sass-course-files",
+  "version": "2.0.0",
+  "description": "SASS compile|autoprefix|minimize and live-reload dev server using Browsersync for static HTML",
+  "main": "public/index.html",
+  "author": "Kevin Powell",
+  "scripts": {
+    "build:sass": "sass src/sass:dist/css",
+    "copy:css": "copyfiles -u 1 ./src/css/* dist",
+    "copy:html": "copyfiles -u 1 ./src/**/*.html dist",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:html": "onchange \"src/**/*.html\" -- npm run copy:html",
+    "watch:sass": "sass --watch src/sass:dist/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server dist --files dist",
+    "start": "npm-run-all --parallel watch serve",
+    "build": "npm-run-all copy:html build:* copy:css",
+    "postbuild": "postcss dist/css/*.css -u autoprefixer cssnano -r --no-map"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "browser-sync": "^2.26.14",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.0.2",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.13"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
