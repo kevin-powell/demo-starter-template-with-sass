@@ -1,5 +1,3 @@
-![logo](https://repository-images.githubusercontent.com/302921248/58478900-0adf-11eb-8f0b-74be58a898ef)
-
 # Demo starter template (with Sass)
 
 My starter template for larger demos on [my YouTube channel](https://youtube.com/kevinpowell) where I am using Sass.
