@@ -12,3 +12,6 @@ css
 
 # macOS related files
 .DS_Store
+
+# premium fonts
+/fonts
